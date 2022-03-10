@@ -13,6 +13,7 @@ namespace EsturContacts.Services.Contacts.Mapping
             CreateMap<Contact,ContactDTO>().ReverseMap();
             CreateMap<Contact,ContactCreateDTO>().ReverseMap();
             CreateMap<Contact,ContactUpdateDTO>().ReverseMap();
+            CreateMap<Contact,ContactDeleteDTO>().ReverseMap();
 
             //Contact Info Mapping
             CreateMap<ContactInfo,ContactInfoDTO>().ReverseMap();
