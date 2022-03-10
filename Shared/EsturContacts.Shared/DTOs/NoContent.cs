@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EsturContacts.Shared.DTOs
 {
-    public class ResponseDTO<T>
+    public class NoContent
     {
     }
 }
