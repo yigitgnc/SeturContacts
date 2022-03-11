@@ -11,7 +11,8 @@ Rapor oluşturan mikro serviste de eventual consistnecy kullanarak contact mikro
 eğer ilk mikroservis çökse bile rapor oluşturm işleminde aksama olmasını istemem.
 
 # Services
-Her bir servis küçük bir web api projesi;
+Her bir servis küçük bir web api projesi.
+
 ilk mikro servis aşağıdaki
 --------------------------
 Rehberde kişi oluşturma
