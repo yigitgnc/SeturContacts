@@ -34,5 +34,5 @@ görevlerini yerine getirirken 2. mikro servis
 *Sistemin oluşturduğu bir raporun detay bilgilerinin getirilmesi
 
 --------------------------
-görevlerinden sorumlu
+görevlerinden sorumlu. 2. mikro servis için oluşturulan raporlar içerisinde ilk mikro servisten aldığı contact bilgilerini barındırıyor ancak raporları veri tabanından okutmak yerine static path aktif edip html docx veya xlsx formatında servis etme niyetindeyim
 
