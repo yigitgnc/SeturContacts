@@ -1,6 +1,6 @@
 ﻿namespace SeturContacts.Services.Report.Models
 {
-    public class ReportContactInfo
+    public class ContactInfo
     {
         public string GSM { get; set; }
 

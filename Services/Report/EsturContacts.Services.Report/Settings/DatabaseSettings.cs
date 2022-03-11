@@ -2,7 +2,7 @@
 {
     public class DatabaseSettings : IDatabaseSettings
     {
-        public string ContactDataCollectionName { get; set; }
+        public string ReportDataCollectionName { get; set; }
         //decidet to store it as an object
         //public string ContactDataInfoCollectionName { get; set; }
         public string ConnectionString { get; set; }

@@ -15,6 +15,6 @@ namespace SeturContacts.Services.Report.Models
         public string Status { get; set; }
         public string Location { get; set; }
 
-        public List<ReportContact> Contacts { get; set; }
+        public List<ContactData> Contacts { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SeturContacts.Services.Report.DTOs;
+using SeturContacts.Services.Report.DTOs.JsonDeserialize;
 using SeturContacts.Services.Report.Models;
 
 namespace SeturContacts.Services.Report.Mapping
@@ -9,6 +10,7 @@ namespace SeturContacts.Services.Report.Mapping
         public GeneralMapping()
         {
             CreateMap<ReportData, ReportDataCreateDTO>().ReverseMap();
+            CreateMap<ContactData, JsonContactDataDTO>().ReverseMap();
         }
     }
 }

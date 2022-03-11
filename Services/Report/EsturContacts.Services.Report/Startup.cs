@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using SeturContacts.Services.Report.Services;
 using SeturContacts.Services.Report.Settings;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,8 @@ namespace SeturContacts.Services.Report
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IReportService, ReportService>();
+
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
             services.AddSingleton<IDatabaseSettings>(servProvider =>
             {
