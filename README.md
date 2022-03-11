@@ -9,6 +9,7 @@ Mass Transit ile RabbitMQ kullanıyorum
 Identity Server projeye dahi ledildi ancak configure etmedim, zamanım olursa token exchange ve identity servisi ile endpointler de kullanıcıya göre işlem yapacak şekilde düzenleme yapabilirim.
 Rapor oluşturan mikro serviste de eventual consistnecy kullanarak contact mikro servisine olan bağlılığı ortadan kaldırıp standalone çalışacak şekilde kurgulamak istiyorum. 
 eğer ilk mikroservis çökse bile rapor oluşturm işleminde aksama olmasını istemem.
+Tüm endpointler swagger ile test edildiği için UnitTest yazma gereksinimi duymadım
 
 # Services
 Her bir servis küçük bir web api projesi.
