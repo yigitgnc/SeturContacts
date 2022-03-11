@@ -16,30 +16,6 @@ namespace SeturContacts.Services.Report.Services
 {
     public class ReportService : IReportService
     {
-        //public class ContactDataInformation
-        //{
-        //    public string gsm { get; set; }
-        //    public string email { get; set; }
-        //    public string location { get; set; }
-        //}
-
-        //public class Datum
-        //{
-        //    public string id { get; set; }
-        //    public object userID { get; set; }
-        //    public string name { get; set; }
-        //    public string surname { get; set; }
-        //    public string company { get; set; }
-        //    public ContactDataInformation contactDataInformation { get; set; }
-        //}
-
-        //public class Root
-        //{
-        //    public List<Datum> data { get; set; }
-        //    public object errors { get; set; }
-        //}
-
-
         private readonly IMongoCollection<ReportData> _reportCollection;
         private readonly IMapper _mapper;
 
@@ -56,20 +32,19 @@ namespace SeturContacts.Services.Report.Services
 
         public async Task<Response<ReportData>> CreateReportDataAsync(ReportDataCreateDTO report)
         {
-            //this is where the cheating begin :)
-            HttpClient client = new HttpClient();
-            string allContactsString = await client.GetStringAsync("http://localhost:5011/api/Contact");
-            //var json = JsonConvert.DeserializeObject<Response<List<ReportContact>>>(allContactsString);
-            //object json = JsonConvert.DeserializeObject(allContactsString);
-            JsonGetContactsDTO jsonGetContacts = JsonConvert.DeserializeObject<JsonGetContactsDTO>(allContactsString);
-            //List<ContactData> test = JObject();
+          
 
             ReportData newReportData = _mapper.Map<ReportData>(report);
-            //newReportData.Contacts = json.Data;
+            newReportData.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
             newReportData.Status = "Hazırlanıyor";
             newReportData.CreatedDate = DateTime.Now;
-            newReportData.Contacts = _mapper.Map<List<ContactData>>(jsonGetContacts.data);
-            newReportData.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
+
+            //this is where the cheating begin :)
+            //HttpClient client = new HttpClient();
+            //string allContactsString = await client.GetStringAsync("http://localhost:5011/api/Contact");
+            //JsonGetContactsDTO jsonGetContacts = JsonConvert.DeserializeObject<JsonGetContactsDTO>(allContactsString);
+            //newReportData.Contacts = _mapper.Map<List<ContactData>>(jsonGetContacts.data);
+
             await _reportCollection.InsertOneAsync(newReportData);
 
             return Response<ReportData>.Success(newReportData, 200);

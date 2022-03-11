@@ -17,27 +17,9 @@ namespace SeturContacts.Services.Report.Models
 
         public List<ContactData> Contacts { get; set; }
 
-        [BsonIgnore]
-        public int ContactCount => Contacts.Count; 
+        public int ContactCount { get; set; }
 
-        [BsonIgnore]
-        public int ContactsGsmOnlyCount
-        {
-            get
-            {
-                //todo: thats definately the worst way to count it !!!!
-                int count = 0;
-                foreach (var item in Contacts)
-                {
-                    if (string.IsNullOrWhiteSpace(item.ContactDataInformation.GSM))
-                    {
-                        count++;
-                    }
-                }
-                return count;
-
-            }
-        }
+        public int ContactsGsmOnlyCount { get; set; }
 
     }
 }
