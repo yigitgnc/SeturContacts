@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\EsturContacts.Shared\EsturContacts.Shared.csproj" />
+    <ProjectReference Include="..\..\..\Shared\EsturContacts.Shared\SeturContacts.Shared.csproj" />
   </ItemGroup>
 
 </Project>
