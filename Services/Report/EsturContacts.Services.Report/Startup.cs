@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using SeturContacts.Services.Report.Consumers;
 using SeturContacts.Services.Report.Services;
 using SeturContacts.Services.Report.Settings;
 using System;
@@ -29,6 +31,30 @@ namespace SeturContacts.Services.Report
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMassTransit(x =>
+            {
+                x.AddConsumer<CreateReportMessageCommandConsumer>();
+
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(Configuration["RabbitMQUrl"], "/", host =>
+                    {
+                          host.Username("guest");
+                          host.Password("guest");
+                    });
+
+                    cfg.ReceiveEndpoint("create-report-service", e =>
+                    {
+                         e.ConfigureConsumer<CreateReportMessageCommandConsumer>(context);
+
+                    });
+                });
+
+
+            });
+
+            services.AddMassTransitHostedService();
+
             services.AddScoped<IReportService, ReportService>();
 
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));

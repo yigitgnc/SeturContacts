@@ -1,4 +1,7 @@
 Services
 	-ContactDataAPI => http://localhost:5011
+
 	-ReportApý => http://localhost:5012
+	---RabbitMQ => http://localhost:5672    (default port)
+
 	-IdentityServer => Not Implemented !

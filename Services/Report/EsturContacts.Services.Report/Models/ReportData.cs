@@ -16,5 +16,10 @@ namespace SeturContacts.Services.Report.Models
         public string Location { get; set; }
 
         public List<ContactData> Contacts { get; set; }
+
+        public int ContactCount { get; set; }
+
+        public int ContactsGsmOnlyCount { get; set; }
+
     }
 }
