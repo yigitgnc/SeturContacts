@@ -1,6 +1,6 @@
 ﻿namespace EsturContacts.Services.Contact.DTOs
 {
-    internal class ContactDataCreateDTO
+    public class ContactDataCreateDTO
     {
         public string UserID { get; set; }
         public string Name { get; set; }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace EsturContacts.Services.Contact.Services
 {
-    internal interface IContactDataService
+    public interface IContactDataService
     {
         //Rehberde kişi oluşturma
-        Task<Response<ContactDataDTO>> CreateContactDataAsync(ContactDataCreateDTO contact);
+        Task<Response<ContactData>> CreateContactDataAsync(ContactDataCreateDTO contact);
         //Rehberde kişi kaldırma
         //i wanna return a ContactData Model instead of NoContent because i want to show the deleted user's basic informations to say goodbye :(
         Task<Response<ContactDataDeleteDTO>> DeleteContactDataByIdAsync(string id);
@@ -20,9 +20,9 @@ namespace EsturContacts.Services.Contact.Services
         Task<Response<NoContent>> UpdateContactDataAsync(ContactDataUpdateDTO contact);
 
         //Rehberdeki bir kişiyle ilgili iletişim bilgilerinin de yer aldığı detay bilgilerin getirilmesi
-        Task<Response<ContactDataDTO>> GetContactDataByIdAsync(string id);
+        Task<Response<ContactData>> GetContactDataByIdAsync(string id);
         //Rehberdeki kişilerin listelenmesi
-        Task<Response<List<ContactDataDTO>>> GetAllContactDatasAsync();
+        Task<Response<List<ContactData>>> GetAllContactDatasAsync();
 
     }
 }

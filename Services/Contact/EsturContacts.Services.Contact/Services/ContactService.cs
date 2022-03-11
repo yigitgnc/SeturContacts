@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EsturContacts.Services.Contact.Services
 {
-    internal class ContactDataService : IContactDataService
+    public class ContactDataService : IContactDataService
     {
         private readonly IMongoCollection<ContactData> _contactCollection;
         private readonly IMapper _mapper;
@@ -26,33 +26,34 @@ namespace EsturContacts.Services.Contact.Services
             _mapper = mapper;
         }
 
-        public async Task<Response<List<ContactDataDTO>>> GetAllContactDatasAsync()
+        public async Task<Response<List<ContactData>>> GetAllContactDatasAsync()
         {
             //todo: add better error management !
-            Response<List<ContactDataDTO>> response;
+            Response<List<ContactData>> response;
             try
             {
 
                 var contacts = await _contactCollection.Find(c => true).ToListAsync();
-                response = Response<List<ContactDataDTO>>.Success(_mapper.Map<List<ContactDataDTO>>(contacts), 200);
+                response = Response<List<ContactData>>.Success(_mapper.Map<List<ContactData>>(contacts), 200);
             }
             catch (Exception ex)
             {
                 //todo: its dangerous to return exception message !!
-                response = Response<List<ContactDataDTO>>.Fail(ex.Message, 500);
+                response = Response<List<ContactData>>.Fail(ex.Message, 500);
             }
 
             return response;
         }
 
-        public async Task<Response<ContactDataDTO>> CreateContactDataAsync(ContactDataCreateDTO contact)
+        public async Task<Response<ContactData>> CreateContactDataAsync(ContactDataCreateDTO contact)
         {
             ContactData newContactData = _mapper.Map<ContactData>(contact);
             newContactData.ContactDataInformation = _mapper.Map<ContactDataInfo>(contact.ContactDataInformation);
+            newContactData.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
 
             await _contactCollection.InsertOneAsync(newContactData);
 
-            return Response<ContactDataDTO>.Success(_mapper.Map<ContactDataDTO>(contact), 200);
+            return Response<ContactData>.Success(_mapper.Map<ContactData>(contact), 200);
         }
 
         public async Task<Response<NoContent>> UpdateContactDataAsync(ContactDataUpdateDTO contact)
@@ -75,12 +76,9 @@ namespace EsturContacts.Services.Contact.Services
             try
             {
                 ContactData contact = null;
-                Guid uuId;
-                if (!Guid.TryParse(id, out uuId))
-                {
-                    contact = await _contactCollection.Find(c => c.Id == uuId).FirstOrDefaultAsync();
-                    await _contactCollection.DeleteOneAsync(c => c.Id == contact.Id);
-                }
+                contact = await _contactCollection.Find(c => c.Id == id).FirstOrDefaultAsync();
+                await _contactCollection.DeleteOneAsync(c => c.Id == contact.Id);
+
                 if (contact == null)
                 {
                     response = Response<ContactDataDeleteDTO>.Fail("ContactData Not Found", 404);
@@ -98,30 +96,27 @@ namespace EsturContacts.Services.Contact.Services
 
             return response;
         }
-        public async Task<Response<ContactDataDTO>> GetContactDataByIdAsync(string id)
+        public async Task<Response<ContactData>> GetContactDataByIdAsync(string id)
         {
-            Response<ContactDataDTO> response;
+            Response<ContactData> response;
             try
             {
                 ContactData contact = null;
-                Guid uuId;
-                if (!Guid.TryParse(id, out uuId))
-                {
-                    contact = await _contactCollection.Find(c => c.Id == uuId).FirstOrDefaultAsync();
-                }
+                contact = await _contactCollection.Find(c => c.Id == id).FirstOrDefaultAsync();
+
                 if (contact == null)
                 {
-                    response = Response<ContactDataDTO>.Fail("ContactData Not Found", 404);
+                    response = Response<ContactData>.Fail("ContactData Not Found", 404);
                 }
                 else
                 {
-                    response = Response<ContactDataDTO>.Success(_mapper.Map<ContactDataDTO>(contact), 200);
+                    response = Response<ContactData>.Success(_mapper.Map<ContactData>(contact), 200);
                 }
             }
             catch (Exception ex)
             {
                 //no time to proper error handling :(
-                response = Response<ContactDataDTO>.Fail(ex.Message, 500);
+                response = Response<ContactData>.Fail(ex.Message, 500);
             }
 
             return response;

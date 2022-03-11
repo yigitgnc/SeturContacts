@@ -9,10 +9,10 @@ namespace EsturContacts.Services.Contact.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    internal class ContactDatasController : CustomBaseController
+    public class ContactController : CustomBaseController
     {
         private readonly IContactDataService _contactService;
-        public ContactDatasController(IContactDataService contactService)
+        public ContactController(IContactDataService contactService)
         {
             _contactService = contactService;
         }
@@ -21,12 +21,15 @@ namespace EsturContacts.Services.Contact.Controllers
         /// <summary>
         /// Returns All ContactDatas 
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>   
+        [HttpGet]
         public async Task<IActionResult> GetAllContactDatasAsync()
         {
             var response = await _contactService.GetAllContactDatasAsync();
             return CreateActionResultInstance(response);
         }
+
+
         /// <summary>
         /// Returns a contact by id (guid as string)
         /// </summary>
@@ -51,7 +54,7 @@ namespace EsturContacts.Services.Contact.Controllers
             return CreateActionResultInstance(response);
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> Update(ContactDataUpdateDTO contactUpdateDTO)
         {
             var response = await _contactService.UpdateContactDataAsync(contactUpdateDTO);
