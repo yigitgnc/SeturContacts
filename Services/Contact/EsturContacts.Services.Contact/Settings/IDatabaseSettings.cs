@@ -1,9 +1,9 @@
-﻿namespace EsturContacts.Services.Contacts.Settings
+﻿namespace EsturContacts.Services.Contact.Settings
 {
     public interface IDatabaseSettings
     {
-        public string ContactCollectionName { get; set; }
-        public string ContactInfoCollectionName { get; set; }
+        public string ContactDataCollectionName { get; set; }
+        //public string ContactDataInfoCollectionName { get; set; }
         public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
     }

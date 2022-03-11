@@ -1,5 +1,5 @@
-using EsturContacts.Services.Contacts.Services;
-using EsturContacts.Services.Contacts.Settings;
+using EsturContacts.Services.Contact.Services;
+using EsturContacts.Services.Contact.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +11,12 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
-namespace EsturContacts.Services.Contacts
+namespace EsturContacts.Services.Contact
 {
     public class Startup
     {
@@ -28,7 +30,7 @@ namespace EsturContacts.Services.Contacts
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IContactService, ContactService>();
+            services.AddScoped<IContactDataService, ContactDataService>();
 
             //options pattern
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
@@ -39,9 +41,20 @@ namespace EsturContacts.Services.Contacts
 
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EsturContacts.Services.Contact", Version = "v1" });
+                c.SwaggerDoc("v1.0", new OpenApiInfo
+                {
+                    Title = "EsturContacts.Services.Contact Info",
+                    Version = "v1.0",
+                    Description = "REST APIs "
+                });
+
+                // Set the comments path for the Swagger JSON and UI.**
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
@@ -52,7 +65,12 @@ namespace EsturContacts.Services.Contacts
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EsturContacts.Services.Contact v1"));
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "EsturContacts.Services.Contact v1.0");
+                    c.RoutePrefix = string.Empty;
+
+                });
             }
 
             app.UseRouting();

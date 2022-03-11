@@ -1,22 +1,22 @@
 ﻿using AutoMapper;
-using EsturContacts.Services.Contacts.Models;
-using EsturContacts.Services.Contacts.DTOs;
+using EsturContacts.Services.Contact.DTOs;
+using EsturContacts.Services.Contact.Models;
 
-namespace EsturContacts.Services.Contacts.Mapping
+namespace EsturContacts.Services.Contact.Mapping
 {
     public class GeneralMapping : Profile
     {
 
         public GeneralMapping()
         {
-            //Contact Mapping
-            CreateMap<Contact,ContactDTO>().ReverseMap();
-            CreateMap<Contact,ContactCreateDTO>().ReverseMap();
-            CreateMap<Contact,ContactUpdateDTO>().ReverseMap();
-            CreateMap<Contact,ContactDeleteDTO>().ReverseMap();
+            //ContactData Mapping
+            CreateMap<ContactData, ContactDataDTO>().ReverseMap();
+            CreateMap<ContactData, ContactDataCreateDTO>().ReverseMap();
+            CreateMap<ContactData, ContactDataUpdateDTO>().ReverseMap();
+            CreateMap<ContactData, ContactDataDeleteDTO>().ReverseMap();
 
-            //Contact Info Mapping
-            CreateMap<ContactInfo,ContactInfoDTO>().ReverseMap();
+            //ContactData Info Mapping
+            CreateMap<ContactDataInfo, ContactDataInfoDTO>().ReverseMap();
         }
     }
 }

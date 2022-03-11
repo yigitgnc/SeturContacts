@@ -1,6 +1,6 @@
-﻿namespace EsturContacts.Services.Contacts.DTOs
+﻿namespace EsturContacts.Services.Contact.DTOs
 {
-    internal class ContactDeleteDTO
+    internal class ContactDataDeleteDTO
     {
         public string Name { get; set; }
         public string Surname { get; set; }

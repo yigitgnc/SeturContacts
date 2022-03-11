@@ -2,9 +2,9 @@
 using MongoDB.Bson;
 using System;
 
-namespace EsturContacts.Services.Contacts.Models
+namespace EsturContacts.Services.Contact.Models
 {
-    public class Contact
+    public class ContactData
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -13,7 +13,7 @@ namespace EsturContacts.Services.Contacts.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Company { get; set; }
-        public ContactInfo ContactInformation { get; set; }
+        public ContactDataInfo ContactDataInformation { get; set; }
 
 
     }

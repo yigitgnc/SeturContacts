@@ -1,6 +1,6 @@
-﻿namespace EsturContacts.Services.Contacts.Models
+﻿namespace EsturContacts.Services.Contact.Models
 {
-    public class ContactInfo
+    public class ContactDataInfo
     {
         public string GSM { get; set; }
 

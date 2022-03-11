@@ -1,6 +1,6 @@
-﻿namespace EsturContacts.Services.Contacts.DTOs
+﻿namespace EsturContacts.Services.Contact.DTOs
 {
-    internal class ContactInfoDTO
+    internal class ContactDataInfoDTO
     {
         public string GSM { get; set; }
         public string Email { get; set; }
