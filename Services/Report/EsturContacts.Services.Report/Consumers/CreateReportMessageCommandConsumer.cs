@@ -34,16 +34,45 @@ namespace SeturContacts.Services.Report.Consumers
             try
             {
 
-            var report = await _reportCollection.Find(x => x.Id == context.Message.Id).FirstOrDefaultAsync();
+                var report = await _reportCollection.Find(x => x.Id == context.Message.Id).FirstOrDefaultAsync();
 
-            ////this is where the cheating begin :)
-            HttpClient client = new HttpClient();
-            string allContactsString = await client.GetStringAsync("http://localhost:5011/api/Contact");
-            JsonGetContactsDTO jsonGetContacts = JsonConvert.DeserializeObject<JsonGetContactsDTO>(allContactsString)
-                ;
-            report.Contacts = _mapper.Map<List<ContactData>>(jsonGetContacts.data);
-            report.Status = "Tamamlandı !";
-            var updateResult = await _reportCollection.FindOneAndReplaceAsync(x => x.Id == report.Id, report);
+                ////this is where the cheating begin :)
+                HttpClient client = new HttpClient();
+                string allContactsString = await client.GetStringAsync("http://localhost:5011/api/Contact");
+                JsonGetContactsDTO jsonGetContacts = JsonConvert.DeserializeObject<JsonGetContactsDTO>(allContactsString);
+                var contactDatas = jsonGetContacts.data;
+                if (jsonGetContacts.data != null)
+                {
+                    report.Contacts = new List<ContactData>();
+                    jsonGetContacts.data.ForEach(x =>
+                    {
+                        if (x.contactDataInformation.location == report.Location)
+                        {
+                            if (!string.IsNullOrWhiteSpace(x.contactDataInformation.gsm))
+                            {
+                                report.ContactsGsmOnlyCount++;
+                            }
+                            report.Contacts.Add(new ContactData
+                            {
+                                Id = x.id,
+                                Company = x.company,
+                                Name = x.name,
+                                Surname = x.surname,
+                                ContactDataInformation = new ContactInfo
+                                {
+                                    Email = x.contactDataInformation.email,
+                                    GSM = x.contactDataInformation.gsm,
+                                    Location = x.contactDataInformation.location
+                                },
+                                //no need it i dont even use identity
+                                //UserID = x.userID
+                            });
+                        }
+                    });
+                }
+                report.ContactCount = report.Contacts.Count;
+                report.Status = "Tamamlandı !";
+                var updateResult = await _reportCollection.FindOneAndReplaceAsync(x => x.Id == report.Id, report);
 
             }
             catch (System.Exception ex)

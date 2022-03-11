@@ -6,6 +6,10 @@ namespace SeturContacts.Services.Report.Models
 {
     public class ReportData
     {
+        public ReportData()
+        {
+            Contacts = new List<ContactData>();
+        }
         [BsonId]
         //[BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
@@ -15,7 +19,7 @@ namespace SeturContacts.Services.Report.Models
         public string Status { get; set; }
         public string Location { get; set; }
 
-        public List<ContactData> Contacts { get; set; }
+        public List<ContactData> Contacts = new List<ContactData> { new ContactData() };
 
         public int ContactCount { get; set; }
 
