@@ -29,7 +29,6 @@ namespace SeturContacts.Services.Contact.Controllers
             return CreateActionResultInstance(response);
         }
 
-
         /// <summary>
         /// Returns a contact by id (guid as string)
         /// </summary>
@@ -54,6 +53,11 @@ namespace SeturContacts.Services.Contact.Controllers
             return CreateActionResultInstance(response);
         }
 
+        /// <summary>
+        /// Updates Given ContactData
+        /// </summary>
+        /// <param name="contactUpdateDTO">Object Must Contain Id property to detrmine which record will be updated</param>
+        /// <returns>Returns Updated DATA</returns>
         [HttpPut]
         public async Task<IActionResult> Update(ContactDataUpdateDTO contactUpdateDTO)
         {
@@ -61,6 +65,11 @@ namespace SeturContacts.Services.Contact.Controllers
             return CreateActionResultInstance(response);
         }
 
+        /// <summary>
+        /// Deletes ContactData Record By Given Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {

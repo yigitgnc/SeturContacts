@@ -53,7 +53,7 @@ namespace SeturContacts.Services.Contact.Services
 
             await _contactCollection.InsertOneAsync(newContactData);
 
-            return Response<ContactData>.Success(_mapper.Map<ContactData>(contact), 200);
+            return Response<ContactData>.Success(newContactData, 200);
         }
 
         public async Task<Response<NoContent>> UpdateContactDataAsync(ContactDataUpdateDTO contact)
