@@ -40,5 +40,16 @@ namespace SeturContacts.Services.Report.Controllers
             return CreateActionResultInstance(response);
 
         }
+        /// <summary>
+        /// Returns Report by given ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>returns Report Object</returns>
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetReportByID(string id)
+        {
+            var response = await _reportService.GetReportDataByIdAsync(id);
+            return CreateActionResultInstance(response);
+        }
     }
 }
