@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4F3026
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeturContacts.Shared", "Shared\EsturContacts.Shared\SeturContacts.Shared.csproj", "{559EF8BA-EBDF-4982-A499-EB64FAB615A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeturContacts.Services.Report", "Services\Report\EsturContacts.Services.Report\SeturContacts.Services.Report.csproj", "{BC422741-9546-4CF0-8FEE-264B1CD2B6EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeturContacts.Services.Report", "Services\Report\EsturContacts.Services.Report\SeturContacts.Services.Report.csproj", "{BC422741-9546-4CF0-8FEE-264B1CD2B6EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{C8CAD25C-FA74-410A-ADD7-9B7AAEEB26EC}"
 EndProject
