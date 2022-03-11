@@ -53,6 +53,8 @@ namespace SeturContacts.Services.Report
 
             });
 
+            services.AddMassTransitHostedService();
+
             services.AddScoped<IReportService, ReportService>();
 
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));

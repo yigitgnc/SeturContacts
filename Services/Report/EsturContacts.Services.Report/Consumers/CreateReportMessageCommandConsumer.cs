@@ -31,16 +31,25 @@ namespace SeturContacts.Services.Report.Consumers
 
         public async Task Consume(ConsumeContext<CreateReportMessageCommand> context)
         {
+            try
+            {
+
             var report = await _reportCollection.Find(x => x.Id == context.Message.Id).FirstOrDefaultAsync();
 
             ////this is where the cheating begin :)
             HttpClient client = new HttpClient();
             string allContactsString = await client.GetStringAsync("http://localhost:5011/api/Contact");
-            JsonGetContactsDTO jsonGetContacts = JsonConvert.DeserializeObject<JsonGetContactsDTO>(allContactsString);
+            JsonGetContactsDTO jsonGetContacts = JsonConvert.DeserializeObject<JsonGetContactsDTO>(allContactsString)
+                ;
             report.Contacts = _mapper.Map<List<ContactData>>(jsonGetContacts.data);
             report.Status = "Tamamlandı !";
             var updateResult = await _reportCollection.FindOneAndReplaceAsync(x => x.Id == report.Id, report);
 
+            }
+            catch (System.Exception ex)
+            {
+
+            }
 
         }
     }

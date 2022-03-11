@@ -36,7 +36,7 @@ namespace SeturContacts.Services.Report.Services
 
             ReportData newReportData = _mapper.Map<ReportData>(report);
             newReportData.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
-            newReportData.Status = "Hazırlanıyor";
+            newReportData.Status = "Hazırlanıyor...";
             newReportData.CreatedDate = DateTime.Now;
 
             //this is where the cheating begin :)
