@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EsturContacts.Services.Report
+namespace SeturContacts.Services.Report
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace EsturContacts.Services.Report
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EsturContacts.Services.Report", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SeturContacts.Services.Report", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace EsturContacts.Services.Report
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EsturContacts.Services.Report v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SeturContacts.Services.Report v1"));
             }
 
             app.UseHttpsRedirection();

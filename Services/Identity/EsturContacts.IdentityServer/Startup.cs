@@ -3,8 +3,8 @@
 
 
 using IdentityServer4;
-using EsturContacts.IdentityServer.Data;
-using EsturContacts.IdentityServer.Models;
+using SeturContacts.IdentityServer.Data;
+using SeturContacts.IdentityServer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -13,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace EsturContacts.IdentityServer
+namespace SeturContacts.IdentityServer
 {
     public class Startup
     {

@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using System;
 
-namespace EsturContacts.Services.Contact.Models
+namespace SeturContacts.Services.Contact.Models
 {
     public class ContactData
     {

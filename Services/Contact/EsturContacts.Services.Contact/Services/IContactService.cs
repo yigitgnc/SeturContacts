@@ -1,10 +1,10 @@
-﻿using EsturContacts.Services.Contact.DTOs;
-using EsturContacts.Services.Contact.Models;
-using EsturContacts.Shared.DTOs;
+﻿using SeturContacts.Services.Contact.DTOs;
+using SeturContacts.Services.Contact.Models;
+using SeturContacts.Shared.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EsturContacts.Services.Contact.Services
+namespace SeturContacts.Services.Contact.Services
 {
     public interface IContactDataService
     {

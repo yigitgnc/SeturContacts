@@ -1,4 +1,4 @@
-﻿namespace EsturContacts.Services.Contact.Settings
+﻿namespace SeturContacts.Services.Contact.Settings
 {
     public interface IDatabaseSettings
     {

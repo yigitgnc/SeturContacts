@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EsturContacts.Shared.DTOs
+namespace SeturContacts.Shared.DTOs
 {
     public class NoContent
     {

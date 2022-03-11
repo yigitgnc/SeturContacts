@@ -6,14 +6,14 @@ using System;
 using System.Linq;
 using System.Security.Claims;
 using IdentityModel;
-using EsturContacts.IdentityServer.Data;
-using EsturContacts.IdentityServer.Models;
+using SeturContacts.IdentityServer.Data;
+using SeturContacts.IdentityServer.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
-namespace EsturContacts.IdentityServer
+namespace SeturContacts.IdentityServer
 {
     public class SeedData
     {

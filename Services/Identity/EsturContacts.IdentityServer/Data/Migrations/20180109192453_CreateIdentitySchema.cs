@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace EsturContacts.IdentityServer.Data.Migrations
+namespace SeturContacts.IdentityServer.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

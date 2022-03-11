@@ -12,7 +12,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.Linq;
 
-namespace EsturContacts.IdentityServer
+namespace SeturContacts.IdentityServer
 {
     public class Program
     {

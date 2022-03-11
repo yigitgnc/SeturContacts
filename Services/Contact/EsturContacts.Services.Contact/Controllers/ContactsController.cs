@@ -1,11 +1,11 @@
-﻿using EsturContacts.Services.Contact.DTOs;
-using EsturContacts.Services.Contact.Services;
-using EsturContacts.Shared.ControlleBases;
+﻿using SeturContacts.Services.Contact.DTOs;
+using SeturContacts.Services.Contact.Services;
+using SeturContacts.Shared.ControlleBases;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace EsturContacts.Services.Contact.Controllers
+namespace SeturContacts.Services.Contact.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

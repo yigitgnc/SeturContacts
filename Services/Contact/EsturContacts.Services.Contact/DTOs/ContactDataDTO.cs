@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EsturContacts.Services.Contact.DTOs
+namespace SeturContacts.Services.Contact.DTOs
 {
     public class ContactDataDTO
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using EsturContacts.IdentityServer.Models;
+using SeturContacts.IdentityServer.Models;
 
-namespace EsturContacts.IdentityServer.Data
+namespace SeturContacts.IdentityServer.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
