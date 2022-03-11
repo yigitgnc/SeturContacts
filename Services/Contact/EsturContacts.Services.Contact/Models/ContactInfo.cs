@@ -1,4 +1,4 @@
-﻿namespace EsturContacts.Services.Contact.Models
+﻿namespace SeturContacts.Services.Contact.Models
 {
     public class ContactDataInfo
     {

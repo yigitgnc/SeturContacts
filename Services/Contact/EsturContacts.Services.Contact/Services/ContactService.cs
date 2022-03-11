@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using EsturContacts.Services.Contact.DTOs;
-using EsturContacts.Services.Contact.Models;
-using EsturContacts.Services.Contact.Settings;
-using EsturContacts.Shared.DTOs;
+using SeturContacts.Services.Contact.DTOs;
+using SeturContacts.Services.Contact.Models;
+using SeturContacts.Services.Contact.Settings;
+using SeturContacts.Shared.DTOs;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EsturContacts.Services.Contact.Services
+namespace SeturContacts.Services.Contact.Services
 {
     public class ContactDataService : IContactDataService
     {

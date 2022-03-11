@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using EsturContacts.Services.Contact.DTOs;
-using EsturContacts.Services.Contact.Models;
+using SeturContacts.Services.Contact.DTOs;
+using SeturContacts.Services.Contact.Models;
 
-namespace EsturContacts.Services.Contact.Mapping
+namespace SeturContacts.Services.Contact.Mapping
 {
     public class GeneralMapping : Profile
     {

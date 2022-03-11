@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace EsturContacts.Shared.DTOs
+namespace SeturContacts.Shared.DTOs
 {
     public class Response<T>
     {

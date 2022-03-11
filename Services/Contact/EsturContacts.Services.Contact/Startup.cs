@@ -1,5 +1,5 @@
-using EsturContacts.Services.Contact.Services;
-using EsturContacts.Services.Contact.Settings;
+using SeturContacts.Services.Contact.Services;
+using SeturContacts.Services.Contact.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +16,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace EsturContacts.Services.Contact
+namespace SeturContacts.Services.Contact
 {
     public class Startup
     {
@@ -46,7 +46,7 @@ namespace EsturContacts.Services.Contact
             {
                 c.SwaggerDoc("v1.0", new OpenApiInfo
                 {
-                    Title = "EsturContacts.Services.Contact Info",
+                    Title = "SeturContacts.Services.Contact Info",
                     Version = "v1.0",
                     Description = "REST APIs "
                 });
@@ -67,7 +67,7 @@ namespace EsturContacts.Services.Contact
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "EsturContacts.Services.Contact v1.0");
+                    c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "SeturContacts.Services.Contact v1.0");
                     c.RoutePrefix = string.Empty;
 
                 });

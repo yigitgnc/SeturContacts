@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EsturContacts.Services.Report
+namespace SeturContacts.Services.Report
 {
     public class Program
     {

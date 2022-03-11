@@ -1,10 +1,10 @@
-﻿using EsturContacts.Shared.DTOs;
+﻿using SeturContacts.Shared.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EsturContacts.Shared.ControlleBases
+namespace SeturContacts.Shared.ControlleBases
 {
     public class CustomBaseController : ControllerBase
     {

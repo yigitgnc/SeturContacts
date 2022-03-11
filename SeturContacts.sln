@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Report", "Report", "{045905
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contact", "Contact", "{E51EAA5A-6292-456C-B783-2280ED20FD3F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsturContacts.Services.Contact", "Services\Contact\EsturContacts.Services.Contact\EsturContacts.Services.Contact.csproj", "{2624ED74-3948-4D76-9E0D-94117DF93401}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeturContacts.Services.Contact", "Services\Contact\EsturContacts.Services.Contact\SeturContacts.Services.Contact.csproj", "{2624ED74-3948-4D76-9E0D-94117DF93401}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B1502D9-EBF8-4067-A24F-E107194DB89D}"
 	ProjectSection(SolutionItems) = preProject
@@ -18,13 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4F3026FC-DBC2-4CDF-9F19-854E831205D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsturContacts.Shared", "Shared\EsturContacts.Shared\EsturContacts.Shared.csproj", "{559EF8BA-EBDF-4982-A499-EB64FAB615A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeturContacts.Shared", "Shared\EsturContacts.Shared\SeturContacts.Shared.csproj", "{559EF8BA-EBDF-4982-A499-EB64FAB615A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsturContacts.Services.Report", "Services\Report\EsturContacts.Services.Report\EsturContacts.Services.Report.csproj", "{BC422741-9546-4CF0-8FEE-264B1CD2B6EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeturContacts.Services.Report", "Services\Report\EsturContacts.Services.Report\SeturContacts.Services.Report.csproj", "{BC422741-9546-4CF0-8FEE-264B1CD2B6EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{C8CAD25C-FA74-410A-ADD7-9B7AAEEB26EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsturContacts.IdentityServer", "Services\Identity\EsturContacts.IdentityServer\EsturContacts.IdentityServer.csproj", "{BF2AD864-E04F-498E-8234-45889F8FBAE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeturContacts.IdentityServer", "Services\Identity\EsturContacts.IdentityServer\SeturContacts.IdentityServer.csproj", "{BF2AD864-E04F-498E-8234-45889F8FBAE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

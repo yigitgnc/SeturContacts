@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "EsturContacts.Services.Report": {
+    "SeturContacts.Services.Report": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
