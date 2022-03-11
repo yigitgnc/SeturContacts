@@ -16,12 +16,12 @@ Her bir servis küçük bir web api projesi.
 ilk mikro servis aşağıdaki
 
 --------------------------
-Rehberde kişi oluşturma
-Rehberde kişi kaldırma
-Rehberdeki kişiye iletişim bilgisi ekleme
-Rehberdeki kişiden iletişim bilgisi kaldırma
-Rehberdeki kişilerin listelenmesi
-Rehberdeki bir kişiyle ilgili iletişim bilgilerinin de yer aldığı detay bilgilerin getirilmesi
+*Rehberde kişi oluşturma
+*Rehberde kişi kaldırma
+*Rehberdeki kişiye iletişim bilgisi ekleme
+*Rehberdeki kişiden iletişim bilgisi kaldırma
+*Rehberdeki kişilerin listelenmesi
+*Rehberdeki bir kişiyle ilgili iletişim bilgilerinin de yer aldığı detay bilgilerin getirilmesi
 
 --------------------------
 
@@ -29,9 +29,9 @@ görevlerini yerine getirirken 2. mikro servis
 
 --------------------------
 
-Rehberdeki kişilerin bulundukları konuma göre istatistiklerini çıkartan bir rapor talebi
-Sistemin oluşturduğu raporların listelenmesi
-Sistemin oluşturduğu bir raporun detay bilgilerinin getirilmesi
+*Rehberdeki kişilerin bulundukları konuma göre istatistiklerini çıkartan bir rapor talebi
+*Sistemin oluşturduğu raporların listelenmesi
+*Sistemin oluşturduğu bir raporun detay bilgilerinin getirilmesi
 
 --------------------------
 görevlerinden sorumlu
