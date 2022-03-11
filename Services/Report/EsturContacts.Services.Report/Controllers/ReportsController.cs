@@ -46,25 +46,28 @@ namespace SeturContacts.Services.Report.Controllers
             var response = await _reportService.CreateReportDataAsync(reportDataCreateDTO);
 
             var createReportMessageCommand = new CreateReportMessageCommand();
-            createReportMessageCommand.Location = reportDataCreateDTO.Location;
             createReportMessageCommand.Id = response.Data.Id;
-            response.Data.Contacts.ForEach(x =>
-            {
-                createReportMessageCommand.Contacts.Add(new ContactData
-                {
-                    Id = x.Id,
-                    Company = x.Company,
-                    Name = x.Name,
-                    Surname = x.Surname,
-                    ContactDataInformation = new ContactInfo
-                    {
-                        Email = x.ContactDataInformation.Email,
-                        GSM = x.ContactDataInformation.GSM,
-                        Location = x.ContactDataInformation.Location
-                    },
-                    UserID = x.UserID
-                });
-            });
+            //createReportMessageCommand.Location = reportDataCreateDTO.Location;
+            //if (response.Data.Contacts != null)
+            //{
+            //    response.Data.Contacts.ForEach(x =>
+            //    {
+            //        createReportMessageCommand.Contacts.Add(new ContactData
+            //        {
+            //            Id = x.Id,
+            //            Company = x.Company,
+            //            Name = x.Name,
+            //            Surname = x.Surname,
+            //            ContactDataInformation = new ContactInfo
+            //            {
+            //                Email = x.ContactDataInformation.Email,
+            //                GSM = x.ContactDataInformation.GSM,
+            //                Location = x.ContactDataInformation.Location
+            //            },
+            //            UserID = x.UserID
+            //        });
+            //    });
+            //}
 
             await sendEndpoint.Send(createReportMessageCommand);
 
